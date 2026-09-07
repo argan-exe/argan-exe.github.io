@@ -541,7 +541,10 @@ button:focus-visible {
     padding-left: 1rem;
     display: none;
   }
-
+.has-dropdown .dropdown a {
+    color: var(--color-text);
+  }
+   
   .has-dropdown.open .dropdown {
     display: block;
     opacity: 1;
