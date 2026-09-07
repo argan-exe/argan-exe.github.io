@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -366,7 +366,7 @@
       </div>
 
       <div class="category-grid">
-        <a class="cat-card wedding" style="background-image:url('assets/portofolio foto/wedding/wedding1.jpg')" href="#wedding-gallery">
+        <a class="cat-card wedding" style="background-image:url('assets/Portofolio Foto/Wedding/wedding1.jpg')" href="#wedding-gallery">
           <div class="cat-body">
             <h2>Wedding</h2>
             <p>Cerita tentang dua orang, dan satu hari yang tak terlupakan.</p>
@@ -379,7 +379,7 @@
           </span>
         </a>
 
-        <a class="cat-card" style="background-image:url('assets/portofolio foto/wisuda/wisuda1.jpg')" href="#wisuda-gallery">
+        <a class="cat-card" style="background-image:url('assets/Portofolio Foto/Wisuda/wisuda1.jpg')" href="#wisuda-gallery">
           <div class="cat-body">
             <h2>Wisuda</h2>
             <p>Merayakan perjalanan, pencapaian, dan langkah berikutnya.</p>
@@ -392,7 +392,7 @@
           </span>
         </a>
 
-        <a class="cat-card" style="background-image:url('assets/portofolio foto/sport/sport1.jpg')" href="#sport-gallery">
+        <a class="cat-card" style="background-image:url('assets/Portofolio Foto/Sport/sport1.jpg')" href="#sport-gallery">
           <div class="cat-body">
             <h2>Sport</h2>
             <p>Energi, gerakan, dan momen yang terjadi dalam sepersekian detik.</p>
@@ -481,9 +481,9 @@
   // mengikuti pola nama: kategori1.jpg, kategori2.jpg, dst.
   // Berhenti otomatis begitu nomor berikutnya tidak ditemukan.
   const categories = [
-    { key: 'wedding', folder: 'wedding', prefix: 'wedding' },
-    { key: 'wisuda',  folder: 'wisuda',  prefix: 'wisuda'  },
-    { key: 'sport',   folder: 'sport',   prefix: 'sport'   },
+    { key: 'wedding', folder: 'Wedding', prefix: 'wedding' },
+    { key: 'wisuda',  folder: 'Wisuda',  prefix: 'wisuda'  },
+    { key: 'sport',   folder: 'Sport',   prefix: 'sport'   },
   ];
   const MAX_PER_CATEGORY = 40;
 
@@ -495,7 +495,7 @@
 
     function tryNext(){
       if (i > MAX_PER_CATEGORY) return finish();
-      const src = 'assets/portofolio foto/' + cat.folder + '/' + cat.prefix + i + '.jpg';
+      const src = 'assets/Portofolio Foto/' + cat.folder + '/' + cat.prefix + i + '.jpg';
       const img = new Image();
       img.onload = function(){
         const figure = document.createElement('figure');
