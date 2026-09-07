@@ -546,10 +546,11 @@ button:focus-visible {
   }
    
   .has-dropdown.open .dropdown {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
 
   .nav-toggle {
     display: block;
