@@ -498,8 +498,9 @@ button:focus-visible {
 }
 
 @media (max-width: 760px) {
-  .site-header .wrap {
+  .site-header {
     position: relative;
+    z-index: 100;
   }
 
   .nav-links {
@@ -515,6 +516,7 @@ button:focus-visible {
     gap: 0;
     padding: 0.5rem clamp(1.25rem, 4vw, 3rem) 1rem;
     display: none;
+    z-index: 999;
   }
 
   .nav-links.open {
@@ -549,7 +551,6 @@ button:focus-visible {
   .nav-toggle {
     display: block;
   }
-}
 
   .site-footer .wrap {
     flex-direction: column;
