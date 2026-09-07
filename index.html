@@ -3,26 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wadah Studio — Foto, Video &amp; Undangan Digital</title>
-  <meta name="description" content="ARFA Studio — dokumentasi foto, video, dan undangan digital untuk pernikahan, wisuda, dan acara Anda. Berbasis di Lampung." />
+  <title>Wadah Studio — Undangan Digital, Foto &amp; Video</title>
+  <meta name="description" content="Wadah Studio menyediakan undangan digital, dokumentasi foto, dan video untuk momen spesialmu." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ============ NAV ============ -->
-  <header class="site-nav">
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header">
     <div class="wrap">
-      <a href="#" class="brand">ARFA Studio</a>
+      <a href="index.html" class="brand"><strong>Wadah</strong> <em>Studio</em></a>
+
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
       <nav>
         <ul class="nav-links">
-          <li><a href="#tentang">Tentang</a></li>
-          <li><a href="#porto">Portofolio</a></li>
-          <li><a href="#undangan">Undangan Digital</a></li>
-          <li><a href="#lokasi">Lokasi</a></li>
-          <li><a href="#kontak">Kontak</a></li>
+          <li class="active"><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li class="has-dropdown">
+            <a href="#">
+              Portofolio
+              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 1l4 4 4-4" />
+              </svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="portofolio-foto.html">Foto</a></li>
+              <li><a href="portofolio-video.html">Video</a></li>
+            </ul>
+          </li>
+          <li><a href="undangan.html">Undangan Digital</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </nav>
     </div>
@@ -30,220 +50,156 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="wrap hero-inner">
-      <p class="hero-kicker">Studio foto, video &amp; undangan digital — Lampung</p>
-      <h1>Momen yang berharga, didokumentasikan dengan tenang.</h1>
-      <p>
-        ARFA Studio membantu pernikahan, wisuda, dan acara Anda diabadikan lewat
-        foto dan video, sekaligus menyiapkan undangan digital yang bisa langsung
-        dibagikan ke tamu.
-      </p>
-      <div class="hero-actions">
-        <a href="#" class="btn btn-primary">Chat via WhatsApp</a>
-        <a href="#porto" class="btn btn-ghost">Lihat Portofolio</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TENTANG ============ -->
-  <section id="tentang">
-    <div class="wrap about-grid">
-      <div class="about-copy">
-        <h2>Dikerjakan langsung, dari rencana sampai hasil akhir.</h2>
-        <p>
-          Wadah Studio lahir dari kebiasaan mengabadikan momen-momen kecil yang
-          sering terlewat begitu saja. Kami menangani dokumentasi foto dan video
-          untuk pernikahan, wisuda, dan pertandingan olahraga di sekitar
-          Tanggamus dan Pringsewu, Lampung.
-        </p>
-        <p>
-          Belakangan kami juga mulai membuka layanan pembuatan undangan digital —
-          dikerjakan satu per satu, disesuaikan dengan cerita masing-masing acara.
-        </p>
-        <dl class="about-figures">
-          <div class="figure">
-            <dd>50+</dd>
-            <dt>Acara terdokumentasikan</dt>
-          </div>
-          <div class="figure">
-            <dd>3</dd>
-            <dt>Layanan utama</dt>
-          </div>
-          <div class="figure">
-            <dd>100%</dd>
-            <dt>Dikerjakan sendiri</dt>
-          </div>
-        </dl>
-      </div>
-      <div class="about-photo">
-        <img
-          src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1200&auto=format&fit=crop"
-          alt="Fotografer sedang mengambil gambar di sebuah acara"
-          loading="lazy"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PORTOFOLIO ============ -->
-  <section id="porto" class="section-line">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Sebagian dari yang pernah kami kerjakan</h2>
-        <p>Cuplikan dokumentasi pernikahan, wisuda, dan acara olahraga.</p>
-      </div>
-
-      <div class="portfolio-tabs">
-        <span class="active">Semua</span>
-        <span>Pernikahan</span>
-        <span>Wisuda</span>
-        <span>Olahraga</span>
-      </div>
-
-      <div class="portfolio-grid">
-        <div class="portfolio-item item-a">
-          <img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
-            alt="Pasangan pengantin berjalan bergandengan tangan"
-            loading="lazy"
-          />
-          <span class="cap">Pernikahan — Sesi Outdoor</span>
-        </div>
-        <div class="portfolio-item item-b">
-          <img
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop"
-            alt="Suasana prosesi wisuda"
-            loading="lazy"
-          />
-          <span class="cap">Wisuda — Prosesi</span>
-        </div>
-        <div class="portfolio-item item-c">
-          <img
-            src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop"
-            alt="Pemain sepak bola dalam pertandingan"
-            loading="lazy"
-          />
-          <span class="cap">Pertandingan Sepak Bola</span>
-        </div>
-        <div class="portfolio-item item-d">
-          <img
-            src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800&auto=format&fit=crop"
-            alt="Detail cincin pernikahan"
-            loading="lazy"
-          />
-          <span class="cap">Detail</span>
-        </div>
-      </div>
-
-      <div class="portfolio-more">
-        <a href="#" class="btn btn-dark">Lihat Semua Portofolio</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ KATALOG UNDANGAN ============ -->
-  <section id="undangan" class="section-line">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Katalog undangan digital</h2>
-        <p>Pilih tema yang paling cocok dengan acara Anda, atau jadikan referensi awal.</p>
-      </div>
-
-      <div class="katalog-grid">
-        <div class="katalog-card">
-          <img
-            src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800&auto=format&fit=crop"
-            alt="Contoh tampilan undangan digital tema minimalis"
-            loading="lazy"
-          />
-          <div class="katalog-card-body">
-            <h3>Minimalis</h3>
-            <p>Tipografi bersih, warna netral, cocok untuk acara yang ingin tampil simpel.</p>
-            <a href="#">Lihat demo</a>
-          </div>
-        </div>
-        <div class="katalog-card">
-          <img
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop"
-            alt="Contoh tampilan undangan digital tema elegan"
-            loading="lazy"
-          />
-          <div class="katalog-card-body">
-            <h3>Elegan</h3>
-            <p>Aksen emas dan tipografi serif, untuk kesan acara yang lebih formal.</p>
-            <a href="#">Lihat demo</a>
-          </div>
-        </div>
-        <div class="katalog-card">
-          <img
-            src="https://images.unsplash.com/photo-1611868862072-4dd8f89f7c8a?q=80&w=800&auto=format&fit=crop"
-            alt="Contoh tampilan undangan digital tema islami"
-            loading="lazy"
-          />
-          <div class="katalog-card-body">
-            <h3>Islami</h3>
-            <p>Motif geometris lembut dengan palet hijau tua dan krem.</p>
-            <a href="#">Lihat demo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LOKASI ============ -->
-  <section id="lokasi" class="section-line">
-    <div class="wrap lokasi-grid">
-      <div class="lokasi-copy">
-        <h2>Lokasi</h2>
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Selamat datang di</p>
+        <h1><strong>Wadah</strong> <em>Studio</em></h1>
         <p>
-          Berbasis di kawasan Tanggamus &amp; Lampung — siap melayani
-          sesi foto dan video di sekitar wilayah Lampung.
+          Di sini kamu bisa mendapatkan berbagai layanan kreatif untuk momen
+          spesialmu. Mulai dari undangan digital yang elegan, dokumentasi foto
+          yang penuh cerita, hingga video yang mengabadikan setiap detik berharga.
         </p>
-        <address>
-          Tanggamus / Pringsewu,<br />
-          Lampung, Indonesia
-        </address>
-        <a href="https://maps.app.goo.gl/GAUUc99a5fGmSfYLA" class="btn btn-dark">Buka di Google Maps</a>
+        <a href="portofolio-foto.html" class="btn">
+          Lihat Portofolio
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8h10M9 4l4 4-4 4" />
+          </svg>
+        </a>
       </div>
-      <iframe
-        class="map-frame"
-        src="https://www.google.com/maps?q=Pringsewu,Lampung&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Peta lokasi ARFA Studio"
-      ></iframe>
+
+      <div class="carousel">
+        <img src="assets/slide/slide1.jpg" alt="Dokumentasi Wadah Studio - foto 1" class="active" />
+        <img src="assets/slide/slide2.jpg" alt="Dokumentasi Wadah Studio - foto 2" />
+        <img src="assets/slide/slide3.jpg" alt="Dokumentasi Wadah Studio - foto 3" />
+        <img src="assets/slide/slide4.jpg" alt="Dokumentasi Wadah Studio - foto 4" />
+        <img src="assets/slide/slide5.jpg" alt="Dokumentasi Wadah Studio - foto 5" />
+
+        <button class="carousel-arrow prev" aria-label="Foto sebelumnya">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </button>
+        <button class="carousel-arrow next" aria-label="Foto berikutnya">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </button>
+
+        <div class="carousel-dots">
+          <button class="active" aria-label="Ke foto 1"></button>
+          <button aria-label="Ke foto 2"></button>
+          <button aria-label="Ke foto 3"></button>
+          <button aria-label="Ke foto 4"></button>
+          <button aria-label="Ke foto 5"></button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ FOOTER / KONTAK ============ -->
-  <footer id="kontak" class="site-footer">
-    <div class="wrap footer-grid">
+  <!-- ============ LAYANAN ============ -->
+  <section class="layanan">
+    <div class="wrap">
+      <div class="layanan-item">
+        <span class="layanan-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="1.5" />
+            <path d="M3 6.5l9 6 9-6" />
+          </svg>
+        </span>
+        <div>
+          <h3>Undangan Digital</h3>
+          <p>Undangan modern, praktis, dan elegan untuk hari istimewamu.</p>
+        </div>
+      </div>
+
+      <div class="layanan-item">
+        <span class="layanan-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h2.5l1.2-2h8.6l1.2 2H20a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+            <circle cx="12" cy="13.5" r="3.4" />
+          </svg>
+        </span>
+        <div>
+          <h3>Foto</h3>
+          <p>Abadikan momen terbaik dengan hasil foto berkualitas tinggi.</p>
+        </div>
+      </div>
+
+      <div class="layanan-item">
+        <span class="layanan-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="12" height="12" rx="1.5" />
+            <path d="M15 10l6-3v10l-6-3" />
+          </svg>
+        </span>
+        <div>
+          <h3>Video</h3>
+          <p>Cerita hidupmu, dikemas dengan visual yang memukau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
       <div class="footer-brand">
-        <a href="#" class="brand">ARFA Studio</a>
-        <p>Dokumentasi foto, video, dan undangan digital untuk acara Anda di Lampung.</p>
+        <a href="index.html" class="brand"><strong>Wadah</strong> <em>Studio</em></a>
+        <p class="footer-tagline">Capture &bull; Create &bull; Preserve</p>
       </div>
-      <div class="footer-col">
-        <h4>Layanan</h4>
-        <ul>
-          <li><a href="#porto">Foto &amp; Video</a></li>
-          <li><a href="#undangan">Undangan Digital</a></li>
-          <li><a href="#tentang">Tentang Kami</a></li>
-        </ul>
+
+      <div class="footer-contact">
+        <a href="tel:+6282281923252">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 5c0-.6.4-1 1-1h3l2 5-2 1.2a11 11 0 0 0 5 5L14 14l5 2v3c0 .6-.4 1-1 1C10.1 20 4 13.9 4 6V5z" />
+          </svg>
+          +62 822-8192-3252
+        </a>
+        <a href="mailto:argan.fakhry55@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="1.5" />
+            <path d="M3 6.5l9 6 9-6" />
+          </svg>
+          argan.fakhry55@gmail.com
+        </a>
+        <a href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z" />
+            <circle cx="12" cy="10" r="2.4" />
+          </svg>
+          Lampung, Indonesia
+        </a>
       </div>
-      <div class="footer-col">
-        <h4>Kontak</h4>
-        <ul>
-          <li><a href="#">WhatsApp: 08xx-xxxx-xxxx</a></li>
-          <li><a href="#">Instagram: @arfa.studio</a></li>
-          <li><a href="#">arfastudio@email.com</a></li>
-        </ul>
+
+      <div class="footer-social">
+        <a href="https://instagram.com/argan.fakhry" aria-label="Instagram Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="4" y="4" width="16" height="16" rx="4.5" />
+            <circle cx="12" cy="12" r="3.6" />
+            <circle cx="16.4" cy="7.6" r="0.9" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" aria-label="TikTok Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 4v10.2a3.3 3.3 0 1 1-2.6-3.23" />
+            <path d="M14 4c.4 2.2 2 3.8 4.2 4.1" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="3" y="6.5" width="18" height="11" rx="3" />
+            <path d="M10.5 10l4 2-4 2z" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="https://wa.me/6282281923252" aria-label="WhatsApp Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 19l1.1-3.2A7 7 0 1 1 10 18l-4 1z" />
+          </svg>
+        </a>
       </div>
-    </div>
-    <div class="wrap footer-bottom">
-      <span>&copy; 2026 ARFA Studio.</span>
-      <span>Lampung, Indonesia.</span>
     </div>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
