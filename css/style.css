@@ -498,6 +498,10 @@ button:focus-visible {
 }
 
 @media (max-width: 760px) {
+  .site-header .wrap {
+    position: relative;
+  }
+
   .nav-links {
     position: absolute;
     top: 100%;
@@ -545,6 +549,7 @@ button:focus-visible {
   .nav-toggle {
     display: block;
   }
+}
 
   .site-footer .wrap {
     flex-direction: column;
