@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami — Wadah Studio</title>
+  <meta name="description" content="Wadah Studio — lebih dari sekadar foto, kami mengabadikan cerita." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="brand"><strong>Wadah</strong> <em>Studio</em></a>
+
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li class="active"><a href="tentang.html">Tentang</a></li>
+          <li class="has-dropdown">
+            <a href="#">
+              Portofolio
+              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 1l4 4 4-4" />
+              </svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="portofolio-foto.html">Foto</a></li>
+              <li><a href="portofolio-video.html">Video</a></li>
+            </ul>
+          </li>
+          <li><a href="undangan.html">Undangan Digital</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO FOTO ============ -->
+  <section class="page-hero-photo" style="background-image: linear-gradient(90deg, rgba(20,18,16,0.72) 0%, rgba(20,18,16,0.15) 60%), url('assets/tentang/hero.jpg');">
+    <div class="wrap">
+      <p class="hero-eyebrow hero-eyebrow-invert">Tentang Kami</p>
+      <h1 class="page-hero-title"><strong>Wadah</strong> <em>Studio</em></h1>
+      <p class="page-hero-sub">Lebih dari sekadar foto, kami mengabadikan cerita.</p>
+    </div>
+  </section>
+
+  <!-- ============ TENTANG: profil & collage ============ -->
+  <section class="tentang-about">
+    <div class="wrap tentang-about-grid">
+      <div class="tentang-copy">
+        <p class="section-eyebrow">Tentang Wadah Studio</p>
+        <h2>Kami adalah tim kecil dengan mimpi besar.</h2>
+        <p>
+          Wadah Studio hadir dari kecintaan kami pada dunia fotografi dan cerita.
+          Kami percaya bahwa setiap momen, sekecil apa pun, layak untuk
+          diabadikan dengan cara yang indah dan bermakna.
+        </p>
+        <p>
+          Dengan pengalaman dan dedikasi, kami berusaha memberikan hasil terbaik
+          untuk setiap klien, mulai dari momen bahagia di hari pernikahan,
+          pencapaian di hari wisuda, hingga semangat dalam setiap langkah di
+          dunia olahraga.
+        </p>
+
+        <div class="tentang-fitur">
+          <div class="tentang-fitur-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8h2.5l1.2-2h8.6l1.2 2H20a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+              <circle cx="12" cy="13.5" r="3.4" />
+            </svg>
+            <span>Profesional &amp; Berpengalaman</span>
+          </div>
+          <div class="tentang-fitur-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20s-7-4.4-9.3-9A5 5 0 0 1 12 6a5 5 0 0 1 9.3 5c-2.3 4.6-9.3 9-9.3 9z" />
+            </svg>
+            <span>Hasil Foto Berkualitas</span>
+          </div>
+          <div class="tentang-fitur-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8.5" cy="8" r="2.8" />
+              <path d="M2.5 19c0-3 2.7-5.2 6-5.2s6 2.2 6 5.2" />
+              <circle cx="17" cy="9" r="2.2" />
+              <path d="M15.3 13.4c2.6.3 4.7 2.2 4.7 4.8" />
+            </svg>
+            <span>Pelayanan Ramah &amp; Terpercaya</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tentang-collage">
+        <img class="collage-main" src="assets/tentang/profile-utama.jpg" alt="Fotografer Wadah Studio sedang memotret" />
+        <img class="collage-secondary" src="assets/tentang/profile-detail.jpg" alt="Detail kamera dan buku catatan" />
+        <span class="collage-caption">Every Moment Matters</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISI & MISI ============ -->
+ <section class="visimisi">
+    <div class="wrap visimisi-grid">
+      <img class="visimisi-photo" src="assets/tentang/visi-misi.jpg" alt="Detail tangan memegang kamera" />
+
+      <div class="visimisi-panel">
+        <p class="section-eyebrow">Visi &amp; Misi</p>
+        <h2>Menjadi bagian dari cerita terbaik dalam hidup Anda.</h2>
+
+        <div class="visimisi-cols">
+          <div class="visimisi-col">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" />
+              <circle cx="12" cy="12" r="2.6" />
+            </svg>
+            <h3>Visi</h3>
+            <p>
+              Menjadi studio fotografi terpercaya yang selalu menghadirkan
+              karya berkualitas dan berkesan untuk setiap momen.
+            </p>
+          </div>
+          <div class="visimisi-col">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none" />
+            </svg>
+            <h3>Misi</h3>
+            <p>
+              Mengabadikan momen berharga dengan kreativitas, profesionalisme,
+              dan pelayanan terbaik, demi kepuasan setiap klien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA PENUTUP ============ -->
+  <section class="cta-banner">
+    <div class="cta-mountain" aria-hidden="true">
+      <svg viewBox="0 0 1440 220" preserveAspectRatio="none">
+        <polygon points="0,220 0,140 260,60 520,150 760,40 1040,160 1260,90 1440,150 1440,220" />
+      </svg>
+    </div>
+    <div class="wrap cta-content">
+      <p class="hero-eyebrow hero-eyebrow-invert">Bersama Wadah Studio</p>
+      <h2>Mari Abadikan Momen Berharga Anda</h2>
+      <a href="kontak.html" class="btn-pill">
+        Hubungi Kami
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><strong>Wadah</strong> <em>Studio</em></a>
+        <p class="footer-tagline">Capture &bull; Create &bull; Preserve</p>
+      </div>
+
+      <div class="footer-contact">
+        <a href="tel:+6282281923252">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 5c0-.6.4-1 1-1h3l2 5-2 1.2a11 11 0 0 0 5 5L14 14l5 2v3c0 .6-.4 1-1 1C10.1 20 4 13.9 4 6V5z" />
+          </svg>
+          +62 822-8192-3252
+        </a>
+        <a href="mailto:argan.fakhry55@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="1.5" />
+            <path d="M3 6.5l9 6 9-6" />
+          </svg>
+          argan.fakhry55@gmail.com
+        </a>
+        <a href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z" />
+            <circle cx="12" cy="10" r="2.4" />
+          </svg>
+          Lampung, Indonesia
+        </a>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://instagram.com/argan.fakhry" aria-label="Instagram Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="4" y="4" width="16" height="16" rx="4.5" />
+            <circle cx="12" cy="12" r="3.6" />
+            <circle cx="16.4" cy="7.6" r="0.9" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" aria-label="TikTok Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 4v10.2a3.3 3.3 0 1 1-2.6-3.23" />
+            <path d="M14 4c.4 2.2 2 3.8 4.2 4.1" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="3" y="6.5" width="18" height="11" rx="3" />
+            <path d="M10.5 10l4 2-4 2z" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="https://wa.me/6282281923252" aria-label="WhatsApp Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 19l1.1-3.2A7 7 0 1 1 10 18l-4 1z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

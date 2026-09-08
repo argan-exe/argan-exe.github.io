@@ -1,535 +1,222 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofolio Foto — Wadah Studio</title>
-<meta name="description" content="Portofolio foto Wadah Studio: wedding, wisuda, dan sport.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#f2f0ea;
-    --bg-card:#ffffff;
-    --ink:#181b22;
-    --ink-soft:#565a63;
-    --muted:#9a9c9f;
-    --hair:#dcd9d0;
-    --white:#ffffff;
-    --footer:#14161c;
-    --footer-soft:#9ea0a8;
-    --radius:6px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%;display:block;}
-  a{color:inherit;text-decoration:none;}
-  .wrap{max-width:1320px;margin:0 auto;padding:0 48px;}
-
-  /* ---------- Header ---------- */
-  header{
-    padding:26px 0;
-    background:var(--bg);
-    position:relative;
-    z-index:50;
-  }
-  header .wrap{display:flex;align-items:center;justify-content:space-between;}
-  .logo{
-    font-family:'Playfair Display',serif;
-    font-size:26px;
-    letter-spacing:.2px;
-  }
-  .logo b{font-weight:700;}
-  .logo em{font-style:italic;font-weight:500;color:var(--ink-soft);}
-
-  nav.main-nav ul{
-    list-style:none;
-    display:flex;
-    gap:38px;
-    margin:0;padding:0;
-    align-items:center;
-    font-size:15px;
-  }
-  nav.main-nav li{position:relative;}
-  nav.main-nav > ul > li > a{
-    display:flex;align-items:center;gap:6px;
-    color:var(--ink);
-    padding:6px 2px;
-  }
-  .chevron{width:10px;height:10px;transition:transform .18s ease;}
-  .has-dropdown:hover .chevron{transform:rotate(180deg);}
-
-  .dropdown{
-    position:absolute;
-    top:calc(100% + 14px);
-    left:50%;
-    transform:translateX(-50%);
-    background:var(--white);
-    box-shadow:0 18px 40px rgba(20,20,20,.12);
-    border-radius:4px;
-    padding:6px;
-    min-width:140px;
-    opacity:0;
-    visibility:hidden;
-    transform-origin:top center;
-    transition:opacity .16s ease, visibility .16s ease, transform .16s ease;
-  }
-  .has-dropdown:hover .dropdown,
-  .has-dropdown:focus-within .dropdown{
-    opacity:1;visibility:visible;
-    transform:translateX(-50%) translateY(0);
-  }
-  .dropdown a{
-    display:block;
-    padding:10px 16px;
-    font-size:14.5px;
-    border-radius:3px;
-    color:var(--ink-soft);
-    white-space:nowrap;
-  }
-  .dropdown a:hover{background:#f4f2ec;color:var(--ink);}
-  .dropdown a.active{background:#f4f2ec;color:var(--ink);font-weight:500;}
-
-  .nav-toggle{display:none;}
-
-  /* ---------- Hero ---------- */
-  .hero{padding:34px 0 8px;}
-  .eyebrow{
-    font-size:12.5px;
-    letter-spacing:2.5px;
-    color:var(--muted);
-    text-transform:uppercase;
-    margin:0 0 18px;
-  }
-  .hero-top{
-    display:flex;
-    justify-content:space-between;
-    gap:60px;
-    align-items:flex-end;
-    margin-bottom:44px;
-  }
-  .hero-copy{max-width:560px;}
-  h1.headline{
-    font-family:'Playfair Display',serif;
-    font-weight:500;
-    font-size:52px;
-    line-height:1.15;
-    margin:0 0 22px;
-    color:var(--ink);
-  }
-  h1.headline b{font-weight:700;}
-  .hero-copy p{
-    font-size:16px;
-    line-height:1.7;
-    color:var(--ink-soft);
-    margin:0;
-    max-width:460px;
-  }
-  .hero-note{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding-bottom:6px;
-    flex-shrink:0;
-  }
-  .hero-note .rule{width:40px;height:1px;background:var(--ink);}
-  .hero-note p{
-    margin:0;
-    font-size:14.5px;
-    line-height:1.6;
-    color:var(--ink-soft);
-    max-width:210px;
-  }
-
-  /* ---------- Category grid ---------- */
-  .category-grid{
-    display:grid;
-    grid-template-columns:1.55fr 1fr;
-    grid-template-rows:1fr 1fr;
-    gap:22px;
-    margin-bottom:80px;
-  }
-  .cat-card{
-    position:relative;
-    border-radius:var(--radius);
-    overflow:hidden;
-    background:#20232c center/cover no-repeat;
-    color:var(--white);
-    min-height:270px;
-  }
-  .cat-card.wedding{grid-row:1 / 3;}
-  .cat-card::before{
-    content:"";
-    position:absolute;inset:0;
-    background:linear-gradient(to top, rgba(8,9,12,.82) 0%, rgba(8,9,12,.35) 42%, rgba(8,9,12,0) 68%);
-  }
-  .cat-card .cat-body{
-    position:absolute;left:0;right:0;bottom:0;
-    padding:34px 36px;
-    z-index:2;
-  }
-  .cat-card h2{
-    font-family:'Playfair Display',serif;
-    font-weight:700;
-    font-size:30px;
-    margin:0 0 10px;
-  }
-  .cat-card p{
-    margin:0 0 18px;
-    font-size:14.5px;
-    line-height:1.55;
-    color:#e7e6e2;
-    max-width:340px;
-  }
-  .cat-card .see-more{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:14.5px;
-    font-weight:500;
-  }
-  .cat-card .see-more svg{width:15px;height:15px;transition:transform .18s ease;}
-  .cat-card:hover .see-more svg{transform:translateX(4px);}
-  .cat-card .corner-arrow{
-    position:absolute;
-    right:26px;bottom:26px;
-    width:46px;height:46px;
-    border-radius:50%;
-    background:var(--white);
-    display:flex;align-items:center;justify-content:center;
-    z-index:2;
-    transition:transform .18s ease;
-  }
-  .cat-card .corner-arrow svg{width:17px;height:17px;color:var(--ink);}
-  .cat-card:hover .corner-arrow{transform:scale(1.08);}
-  .cat-card.wedding .cat-body{padding:40px 42px;}
-  .cat-card.wedding h2{font-size:34px;}
-
-  /* ---------- Gallery sections ---------- */
-  .gallery-section{
-    padding:70px 0;
-    border-top:1px solid var(--hair);
-    scroll-margin-top:30px;
-  }
-  .gallery-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:24px;
-    margin-bottom:32px;
-  }
-  .gallery-head h3{
-    font-family:'Playfair Display',serif;
-    font-weight:600;
-    font-size:30px;
-    margin:0;
-  }
-  .gallery-head span.count{
-    font-size:14px;
-    color:var(--muted);
-  }
-  .gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:16px;
-  }
-  .gallery-grid figure{
-    margin:0;
-    border-radius:var(--radius);
-    overflow:hidden;
-    background:#e5e2d9;
-    aspect-ratio:4/5;
-  }
-  .gallery-grid figure img{
-    width:100%;height:100%;
-    object-fit:cover;
-    transition:transform .35s ease;
-  }
-  .gallery-grid figure:hover img{transform:scale(1.05);}
-  .gallery-empty{
-    font-size:14.5px;
-    color:var(--muted);
-    padding:20px 0;
-  }
-
-  /* ---------- Footer ---------- */
-  footer{
-    background:var(--footer);
-    color:var(--footer-soft);
-    padding:44px 0;
-    margin-top:20px;
-  }
-  footer .wrap{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:24px;
-  }
-  .foot-brand .logo{color:var(--white);}
-  .foot-brand .logo em{color:#b9bbc2;}
-  .foot-brand p{
-    margin:8px 0 0;
-    font-size:13.5px;
-    letter-spacing:.3px;
-    color:var(--footer-soft);
-  }
-  .foot-contact{
-    display:flex;
-    align-items:center;
-    gap:26px;
-    font-size:14px;
-    flex-wrap:wrap;
-  }
-  .foot-contact div{display:flex;align-items:center;gap:9px;}
-  .foot-contact svg{width:16px;height:16px;flex-shrink:0;}
-  .foot-social{display:flex;gap:12px;}
-  .foot-social a{
-    width:36px;height:36px;
-    border:1px solid #33353d;
-    border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    transition:background .15s ease, border-color .15s ease;
-  }
-  .foot-social a:hover{background:#20222a;border-color:#454750;}
-  .foot-social svg{width:16px;height:16px;}
-
-  /* ---------- Responsive ---------- */
-  @media (max-width:980px){
-    .wrap{padding:0 28px;}
-    nav.main-nav ul{gap:22px;font-size:14px;}
-    h1.headline{font-size:40px;}
-    .hero-top{flex-direction:column;align-items:flex-start;gap:24px;}
-    .category-grid{grid-template-columns:1fr;grid-template-rows:none;}
-    .cat-card.wedding{grid-row:auto;min-height:340px;}
-    .cat-card{min-height:220px;}
-    .gallery-grid{grid-template-columns:repeat(2,1fr);}
-    footer .wrap{flex-direction:column;align-items:flex-start;}
-  }
-  @media (max-width:640px){
-    nav.main-nav{width:100%;}
-    nav.main-nav ul{flex-wrap:wrap;gap:14px 20px;}
-    .dropdown{position:static;transform:none;box-shadow:none;opacity:1;visibility:visible;display:none;padding-left:10px;}
-    .has-dropdown:hover .dropdown{transform:none;}
-    header .wrap{flex-wrap:wrap;}
-    .eyebrow{margin-bottom:12px;}
-    h1.headline{font-size:32px;}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Foto — Wadah Studio</title>
+  <meta name="description" content="Portofolio dokumentasi foto Wadah Studio: pernikahan, olahraga, dan wisuda." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a class="logo" href="index.html"><b>Wadah</b> <em>Studio</em></a>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li class="has-dropdown" tabindex="0">
-          <a href="#">Portofolio
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
-          </a>
-          <div class="dropdown">
-            <a href="portofolio-foto.html" class="active">Foto</a>
-            <a href="portofolio-video.html">Video</a>
-          </div>
-        </li>
-        <li><a href="undangan.html">Undangan Digital</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="hero">
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header">
     <div class="wrap">
-      <div class="hero-top">
-        <div class="hero-copy">
-          <p class="eyebrow">Portofolio Foto</p>
-          <h1 class="headline">Setiap <b>Momen</b>,<br>Punya Cerita</h1>
-          <p>Jelajahi berbagai karya fotografi kami yang menangkap keindahan, emosi, dan cerita di balik setiap momen.</p>
+      <a href="index.html" class="brand"><strong>Wadah</strong> <em>Studio</em></a>
+
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li class="has-dropdown active">
+            <a href="#">
+              Portofolio
+              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 1l4 4 4-4" />
+              </svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="portofolio-foto.html">Foto</a></li>
+              <li><a href="portofolio-video.html">Video</a></li>
+            </ul>
+          </li>
+          <li><a href="undangan.html">Undangan Digital</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-header">
+    <div class="wrap">
+      <h1>Portofolio Foto</h1>
+      <p>
+        Cuplikan dokumentasi pernikahan, olahraga, dan wisuda yang pernah kami
+        kerjakan. Tiap kategori bergeser otomatis — klik panah atau titik di
+        bawah foto untuk melihat yang lain.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ GRID KATEGORI (tiap box = 1 carousel) ============ -->
+  <section class="foto-section">
+    <div class="wrap foto-grid">
+
+      <!-- Kategori: Pernikahan (folder: wedding) -->
+      <div class="foto-card">
+        <div class="carousel">
+          <img src="assets/portofolio-foto/wedding/wedding1.jpg" alt="Pernikahan - foto 1" class="active" />
+          <img src="assets/portofolio-foto/wedding/wedding2.jpg" alt="Pernikahan - foto 2" />
+          <img src="assets/portofolio-foto/wedding/wedding3.jpg" alt="Pernikahan - foto 3" />
+          <img src="assets/portofolio-foto/wedding/wedding4.jpg" alt="Pernikahan - foto 4" />
+
+          <button class="carousel-arrow prev" aria-label="Foto sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 6l-6 6 6 6" />
+            </svg>
+          </button>
+          <button class="carousel-arrow next" aria-label="Foto berikutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+
+          <div class="carousel-dots">
+            <button class="active" aria-label="Ke foto 1"></button>
+            <button aria-label="Ke foto 2"></button>
+            <button aria-label="Ke foto 3"></button>
+            <button aria-label="Ke foto 4"></button>
+          </div>
         </div>
-        <div class="hero-note">
-          <span class="rule"></span>
-          <p>Pilih kategori yang sesuai dengan cerita kamu.</p>
+        <h2>Pernikahan</h2>
+        <p>Dokumentasi momen akad, resepsi, dan sesi foto pasangan.</p>
+      </div>
+
+      <!-- Kategori: Olahraga (folder: sport) -->
+      <div class="foto-card">
+        <div class="carousel">
+          <img src="assets/portofolio-foto/sport/sport1.jpg" alt="Olahraga - foto 1" class="active" />
+          <img src="assets/portofolio-foto/sport/sport2.jpg" alt="Olahraga - foto 2" />
+          <img src="assets/portofolio-foto/sport/sport3.jpg" alt="Olahraga - foto 3" />
+          <img src="assets/portofolio-foto/sport/sport4.jpg" alt="Olahraga - foto 4" />
+
+          <button class="carousel-arrow prev" aria-label="Foto sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 6l-6 6 6 6" />
+            </svg>
+          </button>
+          <button class="carousel-arrow next" aria-label="Foto berikutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+
+          <div class="carousel-dots">
+            <button class="active" aria-label="Ke foto 1"></button>
+            <button aria-label="Ke foto 2"></button>
+            <button aria-label="Ke foto 3"></button>
+            <button aria-label="Ke foto 4"></button>
+          </div>
         </div>
+        <h2>Olahraga</h2>
+        <p>Momen pertandingan dan aksi di lapangan.</p>
       </div>
 
-      <div class="category-grid">
-        <a class="cat-card wedding" style="background-image:url('assets/Portofolio Foto/Wedding/wedding1.jpg')" href="#wedding-gallery">
-          <div class="cat-body">
-            <h2>Wedding</h2>
-            <p>Cerita tentang dua orang, dan satu hari yang tak terlupakan.</p>
-            <span class="see-more">Lihat Koleksi
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
+      <!-- Kategori: Wisuda (folder: wisuda) -->
+      <div class="foto-card">
+        <div class="carousel">
+          <img src="assets/portofolio-foto/wisuda/wisuda1.jpg" alt="Wisuda - foto 1" class="active" />
+          <img src="assets/portofolio-foto/wisuda/wisuda2.jpg" alt="Wisuda - foto 2" />
+          <img src="assets/portofolio-foto/wisuda/wisuda3.jpg" alt="Wisuda - foto 3" />
+          <img src="assets/portofolio-foto/wisuda/wisuda4.jpg" alt="Wisuda - foto 4" />
+
+          <button class="carousel-arrow prev" aria-label="Foto sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 6l-6 6 6 6" />
+            </svg>
+          </button>
+          <button class="carousel-arrow next" aria-label="Foto berikutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+
+          <div class="carousel-dots">
+            <button class="active" aria-label="Ke foto 1"></button>
+            <button aria-label="Ke foto 2"></button>
+            <button aria-label="Ke foto 3"></button>
+            <button aria-label="Ke foto 4"></button>
           </div>
-          <span class="corner-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
-
-        <a class="cat-card" style="background-image:url('assets/Portofolio Foto/Wisuda/wisuda1.jpg')" href="#wisuda-gallery">
-          <div class="cat-body">
-            <h2>Wisuda</h2>
-            <p>Merayakan perjalanan, pencapaian, dan langkah berikutnya.</p>
-            <span class="see-more">Lihat Koleksi
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </div>
-          <span class="corner-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
-
-        <a class="cat-card" style="background-image:url('assets/Portofolio Foto/Sport/sport1.jpg')" href="#sport-gallery">
-          <div class="cat-body">
-            <h2>Sport</h2>
-            <p>Energi, gerakan, dan momen yang terjadi dalam sepersekian detik.</p>
-            <span class="see-more">Lihat Koleksi
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </div>
-          <span class="corner-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
+        </div>
+        <h2>Wisuda</h2>
+        <p>Prosesi wisuda dan momen kebahagiaan bersama keluarga.</p>
       </div>
+
     </div>
   </section>
 
-  <section class="gallery-section" id="wedding-gallery">
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
     <div class="wrap">
-      <div class="gallery-head">
-        <h3>Koleksi Wedding</h3>
-        <span class="count" data-count-for="wedding"></span>
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><strong>Wadah</strong> <em>Studio</em></a>
+        <p class="footer-tagline">Capture &bull; Create &bull; Preserve</p>
       </div>
-      <div class="gallery-grid" id="grid-wedding"></div>
-    </div>
-  </section>
 
-  <section class="gallery-section" id="wisuda-gallery">
-    <div class="wrap">
-      <div class="gallery-head">
-        <h3>Koleksi Wisuda</h3>
-        <span class="count" data-count-for="wisuda"></span>
+      <div class="footer-contact">
+        <a href="tel:+6282281923252">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 5c0-.6.4-1 1-1h3l2 5-2 1.2a11 11 0 0 0 5 5L14 14l5 2v3c0 .6-.4 1-1 1C10.1 20 4 13.9 4 6V5z" />
+          </svg>
+          +62 822-8192-3252
+        </a>
+        <a href="mailto:argan.fakhry55@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="1.5" />
+            <path d="M3 6.5l9 6 9-6" />
+          </svg>
+          argan.fakhry55@gmail.com
+        </a>
+        <a href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z" />
+            <circle cx="12" cy="10" r="2.4" />
+          </svg>
+          Lampung, Indonesia
+        </a>
       </div>
-      <div class="gallery-grid" id="grid-wisuda"></div>
-    </div>
-  </section>
 
-  <section class="gallery-section" id="sport-gallery">
-    <div class="wrap">
-      <div class="gallery-head">
-        <h3>Koleksi Sport</h3>
-        <span class="count" data-count-for="sport"></span>
-      </div>
-      <div class="gallery-grid" id="grid-sport"></div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-brand">
-      <a class="logo" href="index.html"><b>Wadah</b> <em>Studio</em></a>
-      <p>Capture &nbsp;•&nbsp; Create &nbsp;•&nbsp; Preserve</p>
-    </div>
-    <div class="foot-contact">
-      <div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>+62 822-8192-3252</span>
-      </div>
-      <div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
-        <span>argan.fakhry55@gmail.com</span>
-      </div>
-      <div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Lampung, Indonesia</span>
+      <div class="footer-social">
+        <a href="https://instagram.com/argan.fakhry" aria-label="Instagram Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="4" y="4" width="16" height="16" rx="4.5" />
+            <circle cx="12" cy="12" r="3.6" />
+            <circle cx="16.4" cy="7.6" r="0.9" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" aria-label="TikTok Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 4v10.2a3.3 3.3 0 1 1-2.6-3.23" />
+            <path d="M14 4c.4 2.2 2 3.8 4.2 4.1" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+            <rect x="3" y="6.5" width="18" height="11" rx="3" />
+            <path d="M10.5 10l4 2-4 2z" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="https://wa.me/6282281923252" aria-label="WhatsApp Wadah Studio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 19l1.1-3.2A7 7 0 1 1 10 18l-4 1z" />
+          </svg>
+        </a>
       </div>
     </div>
-    <div class="foot-social">
-      <a href="https://instagram.com/argan.fakhry" aria-label="Instagram" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-      </a>
-      <a href="#" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.2v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.1 6.1 0 1 0 5.2 6V8.3a7.8 7.8 0 0 0 4.4 1.4V6.5a4.7 4.7 0 0 1-4.4-4.5z"/></svg>
-      </a>
-      <a href="#" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://wa.me/6282281923252" aria-label="WhatsApp" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20l1-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg>
-      </a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  // Memuat foto tiap kategori secara otomatis dari folder assets,
-  // mengikuti pola nama: kategori1.jpg, kategori2.jpg, dst.
-  // Berhenti otomatis begitu nomor berikutnya tidak ditemukan.
-  const categories = [
-    { key: 'wedding', folder: 'Wedding', prefix: 'wedding' },
-    { key: 'wisuda',  folder: 'Wisuda',  prefix: 'wisuda'  },
-    { key: 'sport',   folder: 'Sport',   prefix: 'sport'   },
-  ];
-  const MAX_PER_CATEGORY = 40;
-
-  function loadCategory(cat){
-    const grid = document.getElementById('grid-' + cat.key);
-    const countEl = document.querySelector('[data-count-for="' + cat.key + '"]');
-    let found = 0;
-    let i = 1;
-
-    function tryNext(){
-      if (i > MAX_PER_CATEGORY) return finish();
-      const src = 'assets/Portofolio Foto/' + cat.folder + '/' + cat.prefix + i + '.jpg';
-      const img = new Image();
-      img.onload = function(){
-        const figure = document.createElement('figure');
-        const realImg = document.createElement('img');
-        realImg.src = src;
-        realImg.alt = cat.prefix + ' ' + i;
-        realImg.loading = 'lazy';
-        figure.appendChild(realImg);
-        grid.appendChild(figure);
-        found++;
-        i++;
-        tryNext();
-      };
-      img.onerror = function(){
-        finish();
-      };
-      img.src = src;
-    }
-
-    function finish(){
-      if (found === 0){
-        const empty = document.createElement('p');
-        empty.className = 'gallery-empty';
-        empty.textContent = 'Belum ada foto di folder ini.';
-        grid.appendChild(empty);
-      }
-      if (countEl) countEl.textContent = found + ' foto';
-    }
-
-    tryNext();
-  }
-
-  categories.forEach(loadCategory);
-</script>
-
+  <script src="js/main.js"></script>
 </body>
 </html>
