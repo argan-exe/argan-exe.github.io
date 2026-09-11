@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<title>Admin Upload Portofolio — Wadah Studio</title>
+<style>
+  body { font-family: sans-serif; max-width: 460px; margin: 3rem auto; padding: 0 1rem; }
+  label { display: block; margin-top: 1rem; font-weight: 600; }
+  input, select, button { width: 100%; padding: 0.6rem; margin-top: 0.3rem; box-sizing: border-box; }
+  button { margin-top: 1.5rem; cursor: pointer; background: #1c1b19; color: #fff; border: none; padding: 0.8rem; }
+  #status { margin-top: 1rem; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+  <h1>Upload Portofolio</h1>
+
+  <label>Kunci Admin</label>
+  <input type="password" id="key" placeholder="Masukkan kunci rahasia" />
+
+  <label>Kategori</label>
+  <select id="category">
+    <option value="wedding">Pernikahan</option>
+    <option value="sport">Olahraga</option>
+    <option value="wisuda">Wisuda</option>
+  </select>
+
+  <label>Pilih Foto</label>
+  <input type="file" id="fileInput" accept="image/*" />
+
+  <button onclick="uploadFoto()">Upload</button>
+  <p id="status"></p>
+
+<script>
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbxne1vZOYose110NCVlc0OeE7wIBc1UYhDzT3YFv7At08XdXWKlIHarzSQXdJKXQpXs/exec";
+
+  function uploadFoto() {
+    const key = document.getElementById("key").value;
+    const category = document.getElementById("category").value;
+    const file = document.getElementById("fileInput").files[0];
+    const status = document.getElementById("status");
+
+    if (!file) {
+      status.textContent = "Pilih foto dulu.";
+      return;
+    }
+
+    status.textContent = "Mengupload...";
+
+    const reader = new FileReader();
+    reader.onload = function () {
+      const base64 = reader.result.split(",")[1];
+
+      fetch(ENDPOINT, {
+        method: "POST",
+        body: JSON.stringify({
+          key: key,
+          category: category,
+          filename: file.name,
+          mimeType: file.type,
+          imageBase64: base64
+        })
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          status.textContent = data.success
+            ? "Berhasil! Link: " + data.imageUrl
+            : "Gagal: " + data.message;
+        })
+        .catch(function (err) {
+          status.textContent = "Error: " + err;
+        });
+    };
+    reader.readAsDataURL(file);
+  }
+</script>
+</body>
+</html>

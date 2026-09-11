@@ -65,7 +65,7 @@
     <div class="wrap foto-grid">
 
       <!-- Kategori: Pernikahan (folder: wedding) -->
-      <div class="foto-card">
+      <div class="foto-card" data-category="wedding">
         <div class="carousel">
           <img src="assets/portofolio-foto/wedding/wedding1.jpg" alt="Pernikahan - foto 1" class="active" />
           <img src="assets/portofolio-foto/wedding/wedding2.jpg" alt="Pernikahan - foto 2" />
@@ -95,7 +95,7 @@
       </div>
 
       <!-- Kategori: Olahraga (folder: sport) -->
-      <div class="foto-card">
+      <div class="foto-card" data-category="sport">
         <div class="carousel">
           <img src="assets/portofolio-foto/sport/sport1.jpg" alt="Olahraga - foto 1" class="active" />
           <img src="assets/portofolio-foto/sport/sport2.jpg" alt="Olahraga - foto 2" />
@@ -125,7 +125,7 @@
       </div>
 
       <!-- Kategori: Wisuda (folder: wisuda) -->
-      <div class="foto-card">
+      <div class="foto-card" data-category="wisuda">
         <div class="carousel">
           <img src="assets/portofolio-foto/wisuda/wisuda1.jpg" alt="Wisuda - foto 1" class="active" />
           <img src="assets/portofolio-foto/wisuda/wisuda2.jpg" alt="Wisuda - foto 2" />
@@ -217,6 +217,45 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+ <script src="js/main.js"></script>
+<script>
+  const DATA_ENDPOINT = "https://script.google.com/macros/s/AKfycbxne1vZOYose110NCVlc0OeE7wIBc1UYhDzT3YFv7At08XdXWKlIHarzSQXdJKXQpXs/exec";
+
+  fetch(DATA_ENDPOINT)
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      renderKategori("wedding", data.wedding);
+      renderKategori("sport", data.sport);
+      renderKategori("wisuda", data.wisuda);
+    })
+    .catch(function (err) {
+      console.error("Gagal ambil data portofolio:", err);
+    });
+
+  function renderKategori(category, urls) {
+    const box = document.querySelector('[data-category="' + category + '"] .carousel');
+    if (!box || !urls || !urls.length) return;
+
+    box.querySelectorAll("img").forEach(function (img) { img.remove(); });
+    box.querySelectorAll(".carousel-dots button").forEach(function (dot) { dot.remove(); });
+
+    const dotsWrap = box.querySelector(".carousel-dots");
+
+    urls.forEach(function (url, i) {
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = category + " - foto " + (i + 1);
+      if (i === 0) img.classList.add("active");
+      box.insertBefore(img, box.firstChild);
+
+      const dot = document.createElement("button");
+      dot.setAttribute("aria-label", "Ke foto " + (i + 1));
+      if (i === 0) dot.classList.add("active");
+      dotsWrap.appendChild(dot);
+    });
+
+    initCarousel(box);
+  }
+</script>
 </body>
 </html>

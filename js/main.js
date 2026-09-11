@@ -79,3 +79,4 @@ function initCarousel(carouselEl) {
 }
 
 document.querySelectorAll(".carousel").forEach(initCarousel);
+window.initCarousel = initCarousel;
